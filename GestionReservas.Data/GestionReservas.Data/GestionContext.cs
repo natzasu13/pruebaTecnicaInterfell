@@ -8,10 +8,12 @@ namespace GestionReservas.Data
     public partial class GestionContext : DbContext
     {
         public GestionContext()
-            : base("name=GestionContext")
+            : base("name=GestionContext1")
         {
         }
 
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Reservacion> Reservacion { get; set; }
         public virtual DbSet<Sala> Sala { get; set; }
@@ -20,6 +22,54 @@ namespace GestionReservas.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetUserLogins>()
+                .Property(e => e.LoginProvider)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUserLogins>()
+                .Property(e => e.ProviderKey)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUserLogins>()
+                .Property(e => e.UserId)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.EmailConfirmed)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.RememberMe)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.PasswordHash)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.SecurityStamp)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.PhoneNumber)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.PhoneNumberConfirmed)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<AspNetUsers>()
+                .Property(e => e.UserName)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Cliente>()
                 .Property(e => e.Nombre)
                 .IsUnicode(false);
