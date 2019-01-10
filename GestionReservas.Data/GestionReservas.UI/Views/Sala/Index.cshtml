@@ -4,5 +4,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Sala</h2>
+<h2>Listar Salas</h2>
+
+<table style="width:100%;" class="table table-dark">
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Espacio</th>
+        <th>Cualidades</th>
+    </tr>
+    @foreach (var item in @ViewBag.listar)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nombre</td>
+            <td>@item.Descripcion</td>
+            <td>@item.Precio</td>
+            <td>@item.TipoCualidades.Nombre</td>
+            <td>@item.TipoEspacio.Nombre</td>
+        </tr>
+    }
+</table>
+
+
 

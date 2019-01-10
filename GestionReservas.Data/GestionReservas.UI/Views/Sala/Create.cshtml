@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registrar Salon</h2>
+
+
+<h2>@ViewBag.Message</h2>
+@using (Html.BeginForm())
+{
+    <input type="hidden" value="@ViewBag.Message" name="Message" />
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Nombre </label>
+            <input id='nombre' name='nombre' placeholder="Nombre" value="@(ViewBag.Nombre ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Descripción</label>
+            <input id='descripcion' name='descripcion' placeholder="Descripción" value="@(ViewBag.Descripcion ?? String.Empty)" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Precio hora alquiler</label>
+            <input id='precio' name='precio' placeholder="Precio" value="@(ViewBag.Precio ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Espacio </label>
+            @Html.DropDownList("espacioId", new SelectList(ViewBag.TipoEspacio, "Id", "Nombre"))
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Cualidades </label>
+            @Html.DropDownList("cualidadesId", new SelectList(ViewBag.Cualidades, "Id", "Nombre"))
+        </div>
+        <div class="col-md-4">
+            <input type="submit" />
+        </div>
+    </div>
+}
+

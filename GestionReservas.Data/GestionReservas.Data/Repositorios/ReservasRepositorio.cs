@@ -31,7 +31,7 @@ namespace GestionReservas.Data.Repositorios
 
         public IEnumerable<Reservacion> ListarReservacion(Reservacion reserva)
         {
-            throw new NotImplementedException();
+            return Context.Reservacion.ToList();
         }
     }
 }

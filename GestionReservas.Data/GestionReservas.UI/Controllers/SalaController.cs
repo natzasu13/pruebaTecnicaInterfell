@@ -11,11 +11,15 @@ namespace GestionReservas.UI.Controllers
     public class SalaController : Controller
     {
         SalaNegocio _sala;
+        ComunesNegocio _comunes;
+
 
         public SalaController()
         {
             if (_sala == null)
                 _sala = new SalaNegocio();
+            if (_comunes == null)
+                _comunes = new ComunesNegocio();
         }
 
         // GET: Sala
@@ -28,6 +32,8 @@ namespace GestionReservas.UI.Controllers
         // GET: Default/Create
         public ActionResult Create()
         {
+            ViewBag.TipoEspacio = _comunes.ListarEspacios();
+            ViewBag.Cualidades = _comunes.ListarTipoCualidades();
             return View();
         }
 
@@ -36,16 +42,12 @@ namespace GestionReservas.UI.Controllers
         public ActionResult Create(FormCollection collection)
         {
             Sala sala = new Sala();
-            /* reserva.Confimada = collection[1];
-             reserva.IdCliente = collection[2];
-             reserva.HoraInicio = collection[3];
-             reserva.HoraFin = collection[4];
-             reserva.IdSalon = collection[5];
-             reserva.Paga = collection[6];
-             reserva.Valor = collection[7];
-
-             */
-
+            sala.Nombre = collection[1];
+            sala.Descripcion = collection[2];
+            sala.Precio = Convert.ToDouble(collection[3]);
+            sala.IdTipoEspacio= Convert.ToInt32(collection[4]);
+            sala.IdCualidades= Convert.ToInt32(collection[5]);
+           
             try
             {
                 // TODO: Add insert logic here

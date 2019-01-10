@@ -72,10 +72,12 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="GestionContext.cs" />
     <Compile Include="Interfaces\IClienteRepositorio.cs" />
+    <Compile Include="Interfaces\IComunesRepositorio.cs" />
     <Compile Include="Interfaces\IReservasRepositorio.cs" />
     <Compile Include="Interfaces\ISalaRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Repositorios\ComunesRepositorio.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
     <Compile Include="Repositorios\ReservasRepositorio.cs" />
     <Compile Include="Repositorios\SalaRepositorio.cs" />
