@@ -44,6 +44,8 @@ namespace GestionReservas.Data.Repositorios
                     modelo.NumeroIdentificacion = clientes.NumeroIdentificacion;
                     modelo.SaldoActual = clientes.SaldoActual;
                     modelo.Telefono = clientes.Telefono;
+
+                    Context.Cliente.Add(modelo);
                 }
 
                 Context.SaveChanges();

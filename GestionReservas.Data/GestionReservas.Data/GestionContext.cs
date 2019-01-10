@@ -8,7 +8,7 @@ namespace GestionReservas.Data
     public partial class GestionContext : DbContext
     {
         public GestionContext()
-            : base("name=GestionContext1")
+            : base("name=GestionContext")
         {
         }
 
