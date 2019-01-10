@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -75,6 +76,7 @@
     <Compile Include="Interfaces\ISalaRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Repositorios\RepositorioBase.cs" />
     <Compile Include="Repositorios\ReservasRepositorio.cs" />
     <Compile Include="Repositorios\SalaRepositorio.cs" />
     <Compile Include="Reservacion.cs" />

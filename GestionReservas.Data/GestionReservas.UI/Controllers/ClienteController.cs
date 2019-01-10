@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionReservas.Data;
+using GestionReservas.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,14 @@ namespace GestionReservas.UI.Controllers
 {
     public class ClienteController : Controller
     {
+        ClienteNegocio _cliente;
+
+        public ClienteController()
+        {
+            if (_cliente == null)
+                _cliente = new ClienteNegocio();
+        }
+
         // GET: Default
         public ActionResult Index()
         {
@@ -30,20 +40,20 @@ namespace GestionReservas.UI.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            string mensaje = collection[0];
-            string nombre = collection[1];
-            string identificacion = collection[2];
-            string saldo = collection[3];
-            string telefono = collection[4];
+            Cliente cliente = new Cliente();
+            cliente.Nombre = collection[1];
+            cliente.NumeroIdentificacion = collection[2];
+            cliente.SaldoActual = Convert.ToDouble(collection[3]);
+            cliente.Telefono = collection[4];
 
             try
             {
                 // TODO: Add insert logic here
-                
 
+                _cliente.GuardarActualizarCliente(cliente);
                return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

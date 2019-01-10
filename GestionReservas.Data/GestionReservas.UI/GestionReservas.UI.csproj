@@ -305,8 +305,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GestionReservas.Data\GestionReservas.Data.csproj">
-      <Project>{ea01764b-736b-48ab-a3be-b27d8c79c724}</Project>
+      <Project>{EA01764B-736B-48AB-A3BE-B27D8C79C724}</Project>
       <Name>GestionReservas.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionReservas.Negocio\GestionReservas.Negocio.csproj">
+      <Project>{adde4510-560f-407f-949a-cd20f9105ebe}</Project>
+      <Name>GestionReservas.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
