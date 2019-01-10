@@ -77,7 +77,8 @@ namespace GestionReservas.Data.Repositorios
         public IEnumerable<Cliente> ListarCliente(Cliente clientes)
         {
             //return Context.Cliente.Where(x => x.Cedula == cedula).FirstOrDefault();
-            return Context.Cliente;
+            IEnumerable<Cliente> listar = Context.Cliente.ToList();
+            return listar;
         }
     }
 }

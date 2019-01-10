@@ -21,6 +21,7 @@ namespace GestionReservas.UI.Controllers
         // GET: Default
         public ActionResult Index()
         {
+            ViewBag.listar = _cliente.ListarCliente(null);
             return View();
         }
 

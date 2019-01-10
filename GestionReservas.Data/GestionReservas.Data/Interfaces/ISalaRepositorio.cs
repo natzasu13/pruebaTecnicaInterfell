@@ -8,5 +8,9 @@ namespace GestionReservas.Data.Interfaces
 {
     public interface ISalaRepositorio
     {
+        Sala GuardarActualizarSala(Sala sala);
+        void EliminarSala(Sala sala);
+        IEnumerable<Sala> ListarSala(Sala sala);
+
     }
 }
