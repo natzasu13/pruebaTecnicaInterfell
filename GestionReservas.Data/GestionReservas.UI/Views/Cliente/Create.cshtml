@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registrar Cliente</h2>
+
+
+<h2>@ViewBag.Message</h2>
+@using (Html.BeginForm())
+{
+    <input type="hidden" value="@ViewBag.Message" name="Message" />
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Nombre </label>
+            <input id='nombre' name='nombre' placeholder="Nombre" value="@(ViewBag.Nombre ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Número de Identificación</label>
+            <input id='identificacion' maxlength="10" name='identificacion' placeholder="Identificación" value="@(ViewBag.Identificacion ?? String.Empty)" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Saldo </label>
+            <input id='saldo' name='saldo' placeholder="Saldo" value="@(ViewBag.Saldo ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Teléfono </label>
+            <input id='telefono' type="number" maxlength="11" name='telefono' placeholder="Teléfono" value="@(ViewBag.Telefono ?? String.Empty)" />
+        </div>
+    </div>
+
+    <div class="row">
+        <input type="submit" />
+    </div>
+
+}

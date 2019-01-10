@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionReservas.Data", "Ges
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionReservas.UI", "GestionReservas.UI\GestionReservas.UI.csproj", "{88D10CB0-D04A-4FC4-9911-FDB34A2D711D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionReservas.WebApi", "GestionReservas.WebApi\GestionReservas.WebApi.csproj", "{DB0392BF-8C8C-4CEA-8325-1FC68EC00381}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{88D10CB0-D04A-4FC4-9911-FDB34A2D711D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D10CB0-D04A-4FC4-9911-FDB34A2D711D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D10CB0-D04A-4FC4-9911-FDB34A2D711D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB0392BF-8C8C-4CEA-8325-1FC68EC00381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0392BF-8C8C-4CEA-8325-1FC68EC00381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0392BF-8C8C-4CEA-8325-1FC68EC00381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0392BF-8C8C-4CEA-8325-1FC68EC00381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
