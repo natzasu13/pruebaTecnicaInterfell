@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionReservas.Data.Repositorios
 {
-    public class ReservasRepositorio :RepositorioBase, IReservasRepositorio
+    public class ReservasRepositorio : RepositorioBase, IReservasRepositorio
     {
         private bool _disposed = false;
         private string connectionString;
@@ -88,7 +88,8 @@ namespace GestionReservas.Data.Repositorios
 
         public IEnumerable<Reservacion> BuscarReservaXIdCliente(int idCliente)
         {
-            return Context.Reservacion.Where(x => x.IdCliente == idCliente).ToList();
+            IEnumerable<Reservacion> lista = Context.Reservacion.Where(x => x.IdCliente == idCliente).Take(10).ToList();
+            return lista;
         }
     }
 }

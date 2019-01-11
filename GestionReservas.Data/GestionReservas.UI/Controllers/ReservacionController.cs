@@ -177,7 +177,7 @@ namespace GestionReservas.UI.Controllers
         public ActionResult ReservasCliente()
         {
             ViewBag.Cliente = _cliente.ListarCliente(null);
-            ViewBag.listar = null;
+            ViewBag.listar = _reserva.BuscarReservaXIdCliente(0);
             return View();
         }
 

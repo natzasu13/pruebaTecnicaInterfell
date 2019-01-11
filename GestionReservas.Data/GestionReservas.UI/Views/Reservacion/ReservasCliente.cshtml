@@ -23,8 +23,7 @@
         <input type=button value="Listar" onclick="myFunction()" style="width:100%">
     </div>
 
-    if (@ViewBag.listar != null)
-    {
+  
         <table style="width:100%;" class="table table-dark" id="tReporte">
             <tr>
                 <th>Id</th>
@@ -45,19 +44,20 @@
             }
         </table>
 
-    }
-
+  
 }
 
 
 <script>
     function myFunction() {
+        //var ddlCliente = document.getElementById("clienteId");
+        var id = $('#clienteId').val();
 
         $.ajax({
             type: "POST",
             url: "/Reservacion/ReservasClientePost",
             contentType: "application/json; charset=utf-8",
-            data: '{"idReserva":"' + id + '"}',
+            data: '{"idCliente":"' + id + '"}',
             dataType: "html",
             success: function (result, status, xhr) {
                 alert("Se confirmo correctamnte");
