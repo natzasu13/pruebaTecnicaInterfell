@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "ReservasCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reporte Reservas por Cliente</h2>
+
+
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Cliente </label>
+            @Html.DropDownList("clienteId", new SelectList(ViewBag.Cliente, "Id", "Nombre"))
+        </div>
+    </div>
+
+    <div class="row">
+        <input type=button value="Listar" onclick="myFunction()" style="width:100%">
+    </div>
+
+    if (@ViewBag.listar != null)
+    {
+        <table style="width:100%;" class="table table-dark" id="tReporte">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Identificación</th>
+                <th>Salado actual</th>
+                <th>Teléfono</th>
+            </tr>
+            @foreach (var item in @ViewBag.listar)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.NumeroIdentificacion</td>
+                    <td>@item.SaldoActual</td>
+                    <td>@item.Telefono</td>
+                </tr>
+            }
+        </table>
+
+    }
+
+}
+
+
+<script>
+    function myFunction() {
+
+        $.ajax({
+            type: "POST",
+            url: "/Reservacion/ReservasClientePost",
+            contentType: "application/json; charset=utf-8",
+            data: '{"idReserva":"' + id + '"}',
+            dataType: "html",
+            success: function (result, status, xhr) {
+                alert("Se confirmo correctamnte");
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+</script>

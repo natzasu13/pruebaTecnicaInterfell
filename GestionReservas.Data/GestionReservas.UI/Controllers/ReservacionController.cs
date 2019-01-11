@@ -157,5 +157,36 @@ namespace GestionReservas.UI.Controllers
                 return View();
             }
         }
+
+        // GET: Reservacion
+        public ActionResult ReportePendientesPago()
+        {
+            ViewBag.listar = _reserva.ListarReservacionSinPagar();
+            return View();
+        }
+
+        // GET: Reservacion
+        public ActionResult ReportePendientesConfimacion()
+        {
+            ViewBag.listar = _reserva.ListarReservacionSinConfirmar();
+            return View();
+        }
+        
+
+        // GET: Reservacion
+        public ActionResult ReservasCliente()
+        {
+            ViewBag.Cliente = _cliente.ListarCliente(null);
+            ViewBag.listar = null;
+            return View();
+        }
+
+        // POST: Reservacion
+        public ActionResult ReservasClientePost(int idCliente)
+        {
+            ViewBag.listar = _reserva.BuscarReservaXIdCliente(idCliente);
+            return View();
+        }
     }
 }
+

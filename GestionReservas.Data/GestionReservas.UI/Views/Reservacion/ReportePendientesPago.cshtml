@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "ReportePendientesPago";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reporte Reservas Pendientes de Pago</h2>
+
+
+<table style="width:100%;" class="table table-dark" id="tConfirmar">
+    <tr>
+        <th>Id</th>
+        <th>Hora Inicio</th>
+        <th>Hora Finalización</th>
+        <th>Valor</th>
+        <th>Cliente</th>
+        <th>Sala</th>
+    </tr>
+    @foreach (var item in @ViewBag.listar)
+    {
+        <tr>
+            <td id="id">@item.Id</td>
+            <td>@item.HoraInicio</td>
+            <td>@item.HoraFin</td>
+            <td id="valor">@item.Valor</td>
+            <td>@item.Cliente.Nombre</td>
+            <td>@item.Sala.Nombre</td>
+
+        </tr>
+    }
+</table>

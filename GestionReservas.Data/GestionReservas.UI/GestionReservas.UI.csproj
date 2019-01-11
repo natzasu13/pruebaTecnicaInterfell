@@ -295,6 +295,9 @@
     <Content Include="Views\Sala\Create.cshtml" />
     <Content Include="Views\Reservacion\Confirmar.cshtml" />
     <Content Include="Views\Reservacion\Pagar.cshtml" />
+    <Content Include="Views\Reservacion\ReportePendientesPago.cshtml" />
+    <Content Include="Views\Reservacion\ReportePendientesConfimacion.cshtml" />
+    <Content Include="Views\Reservacion\ReservasCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
