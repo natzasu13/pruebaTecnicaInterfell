@@ -84,6 +84,14 @@ namespace GestionReservas.Data
                 .HasForeignKey(e => e.IdCliente)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Reservacion>()
+                .Property(e => e.HoraInicio)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Reservacion>()
+                .Property(e => e.HoraFin)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Sala>()
                 .Property(e => e.Nombre)
                 .IsUnicode(false);

@@ -11,11 +11,17 @@ namespace GestionReservas.UI.Controllers
     public class ReservacionController : Controller
     {
         ReservasNegocio _reserva;
+        SalaNegocio _salon;
+        ClienteNegocio _cliente;
 
         public ReservacionController()
         {
             if (_reserva == null)
                 _reserva = new ReservasNegocio();
+            if (_cliente == null)
+                _cliente = new ClienteNegocio();
+            if (_salon == null)
+                _salon = new SalaNegocio();
         }
 
         // GET: Reservacion
@@ -34,6 +40,10 @@ namespace GestionReservas.UI.Controllers
         // GET: Default/Create
         public ActionResult Create()
         {
+            ViewBag.Paga = false;
+            ViewBag.Confirmar = false;
+            ViewBag.Cliente = _cliente.ListarCliente(null);
+            ViewBag.Salon = _salon.ListarSala(null);
             return View();
         }
 
@@ -42,15 +52,15 @@ namespace GestionReservas.UI.Controllers
         public ActionResult Create(FormCollection collection)
         {
             Reservacion reserva = new Reservacion();
-           /* reserva.Confimada = collection[1];
-            reserva.IdCliente = collection[2];
-            reserva.HoraInicio = collection[3];
-            reserva.HoraFin = collection[4];
-            reserva.IdSalon = collection[5];
-            reserva.Paga = collection[6];
-            reserva.Valor = collection[7];
+            reserva.HoraInicio = collection[1];
+            reserva.HoraFin = collection[2];
+            //reserva.Paga = Convert.ToBoolean(collection[3]);
+            //reserva.Confimada = Convert.ToBoolean(collection[4]);
+            reserva.Valor = Convert.ToDouble(collection[3]);
+            reserva.IdSalon = Convert.ToInt32(collection[4]);
+            reserva.IdCliente = Convert.ToInt32(collection[5]);
 
-            */
+
 
             try
             {

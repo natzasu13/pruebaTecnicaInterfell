@@ -6,3 +6,56 @@
 
 <h2>Crear Reservación</h2>
 
+
+<h2>@ViewBag.Message</h2>
+@using (Html.BeginForm())
+{
+    <input type="hidden" value="@ViewBag.Message" name="Message" />
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Hora Inicio </label>
+            <input id='horaInicio' name='horaInicio' placeholder="HH:SS" value="@(ViewBag.HoraInicio ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Hora Fin</label>
+            <input id='horaFin' name='horaFin' placeholder="HH:SS" value="@(ViewBag.HoraFin ?? String.Empty)" />
+
+        </div>
+
+    </div>
+
+    @*<div class="row">
+        <div class="col-md-4">
+            <label>Se encuentra paga </label>
+            @Html.CheckBox("chkPaga")
+        </div>
+        <div class="col-md-4">
+            <label>Confirmar</label>
+            @Html.CheckBox("chkConfirmar")
+        </div>
+
+    </div>*@
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Valor</label>
+            <input id='valor' type="number" name='valor' placeholder="Valor" value="@(ViewBag.Valor ?? String.Empty)" />
+        </div>
+        <div class="col-md-4">
+            <label>Salon </label>
+            @Html.DropDownList("salonId", new SelectList(ViewBag.Salon, "Id", "Nombre"))
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <label>Cliente </label>
+            @Html.DropDownList("clienteId", new SelectList(ViewBag.Cliente, "Id", "Nombre"))
+        </div>
+        <div class="col-md-4">
+            <input type="submit" />
+        </div>
+    </div>
+}
+

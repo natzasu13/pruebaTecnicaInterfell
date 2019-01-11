@@ -26,9 +26,54 @@
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
 
 
-                    <li>@Html.ActionLink("Cliente", "Create", "Cliente")</li>
-                    <li>@Html.ActionLink("Sala", "Create", "Sala")</li>
-                    <li>@Html.ActionLink("Reservacion", "Create", "Reservacion")</li>
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cliente
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Listar</a>
+                            <a class="dropdown-item" href="@Url.Action("Create", "Cliente")">Crear</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Salon
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Sala")">Listar</a>
+                            <a class="dropdown-item" href="@Url.Action("Create", "Sala")">Crear</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reserva
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Listar</a>
+                            <a class="dropdown-item" href="@Url.Action("Create", "Reservacion")">Crear</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Confirmar</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Pagar</a>
+                        </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reportes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Reservas por cliente</a>
+                            <a class="dropdown-item" href="@Url.Action("Create", "Reservacion")">Reservas pendientes por confirmar</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Reservas pendientes por pagar</a>
+                        </div>
+                    </li>
+
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

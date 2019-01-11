@@ -26,7 +26,39 @@ namespace GestionReservas.Data.Repositorios
 
         public Reservacion GuardarActualizarReservacion(Reservacion reserva)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Reservacion modelo = Context.Reservacion.Where(a => a.Id == reserva.Id).FirstOrDefault();
+                if (modelo != null) //Editar
+                {
+                    modelo.HoraInicio = reserva.HoraInicio;
+                    modelo.HoraFin = reserva.HoraFin;
+                    modelo.Valor = reserva.Valor;
+                    modelo.IdSalon = reserva.IdSalon;
+                    modelo.IdCliente = reserva.IdCliente;
+                    modelo.C_updated = DateTime.Now;
+                }
+                else
+                {
+                    modelo = new Reservacion();
+                    modelo.HoraInicio = reserva.HoraInicio;
+                    modelo.HoraFin = reserva.HoraFin;
+                    modelo.Valor = reserva.Valor;
+                    modelo.IdSalon = reserva.IdSalon;
+                    modelo.IdCliente = reserva.IdCliente;
+                    modelo.C_created = DateTime.Now;
+
+                    Context.Reservacion.Add(modelo);
+                }
+
+                Context.SaveChanges();
+                return modelo;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
         public IEnumerable<Reservacion> ListarReservacion(Reservacion reserva)

@@ -15,9 +15,11 @@ namespace GestionReservas.Data
 
         public int IdCliente { get; set; }
 
-        public DateTime? HoraInicio { get; set; }
+        [StringLength(50)]
+        public string HoraInicio { get; set; }
 
-        public DateTime? HoraFin { get; set; }
+        [StringLength(50)]
+        public string HoraFin { get; set; }
 
         public double? Valor { get; set; }
 

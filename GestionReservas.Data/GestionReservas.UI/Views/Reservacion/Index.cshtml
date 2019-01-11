@@ -4,5 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Reservación</h2>
+<h2>Listar Reservaciónes</h2>
+
+<table style="width:100%;" class="table table-dark">
+    <tr>
+        <th>Id</th>
+        <th>Hora Inicio</th>
+        <th>Hora Finalización</th>
+        <th>Valor</th>
+        <th>Cliente</th>
+        <th>Sala</th>
+    </tr>
+    @foreach (var item in @ViewBag.listar)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.HoraInicio</td>
+            <td>@item.HoraFin</td>
+            <td>@item.Valor</td>
+            <td>@item.Cliente.Nombre</td>
+            <td>@item.Sala.Nombre</td>
+        </tr>
+    }
+</table>
 
