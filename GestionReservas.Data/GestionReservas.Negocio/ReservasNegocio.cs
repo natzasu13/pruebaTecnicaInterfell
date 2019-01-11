@@ -23,7 +23,15 @@ namespace GestionReservas.Negocio
             }
         }
 
+        public Reservacion BuscarReservaXId(int id)
+        {
+            return Repositorio.BuscarReservaXId(id);
+        }
 
+        public IEnumerable<Reservacion> BuscarReservaXIdCliente(int idCliente)
+        {
+            return Repositorio.BuscarReservaXIdCliente(idCliente);
+        }
 
         public void EliminarReservacion(Reservacion reserva)
         {
@@ -38,6 +46,16 @@ namespace GestionReservas.Negocio
         public IEnumerable<Reservacion> ListarReservacion(Reservacion reserva)
         {
             return Repositorio.ListarReservacion(reserva);
+        }
+
+        public IEnumerable<Reservacion> ListarReservacionSinConfirmar()
+        {
+            return Repositorio.ListarReservacionSinConfirmar();
+        }
+
+        public IEnumerable<Reservacion> ListarReservacionSinPagar()
+        {
+            return Repositorio.ListarReservacionSinPagar();
         }
     }
 }

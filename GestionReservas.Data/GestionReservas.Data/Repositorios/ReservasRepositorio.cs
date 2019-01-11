@@ -36,6 +36,8 @@ namespace GestionReservas.Data.Repositorios
                     modelo.Valor = reserva.Valor;
                     modelo.IdSalon = reserva.IdSalon;
                     modelo.IdCliente = reserva.IdCliente;
+                    modelo.Paga = reserva.Paga;
+                    modelo.Confimada = reserva.Confimada;
                     modelo.C_updated = DateTime.Now;
                 }
                 else
@@ -46,6 +48,8 @@ namespace GestionReservas.Data.Repositorios
                     modelo.Valor = reserva.Valor;
                     modelo.IdSalon = reserva.IdSalon;
                     modelo.IdCliente = reserva.IdCliente;
+                    modelo.Paga = false;
+                    modelo.Confimada = false;
                     modelo.C_created = DateTime.Now;
 
                     Context.Reservacion.Add(modelo);
@@ -63,7 +67,28 @@ namespace GestionReservas.Data.Repositorios
 
         public IEnumerable<Reservacion> ListarReservacion(Reservacion reserva)
         {
-            return Context.Reservacion.ToList();
+            IEnumerable<Reservacion> lista = Context.Reservacion.ToList();
+            return lista;
+        }
+
+        public IEnumerable<Reservacion> ListarReservacionSinConfirmar()
+        {
+            return Context.Reservacion.Where(x => x.Confimada == false).ToList();
+        }
+
+        public IEnumerable<Reservacion> ListarReservacionSinPagar()
+        {
+            return Context.Reservacion.Where(x => x.Paga == false).ToList();
+        }
+
+        public Reservacion BuscarReservaXId(int id)
+        {
+            return Context.Reservacion.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public IEnumerable<Reservacion> BuscarReservaXIdCliente(int idCliente)
+        {
+            return Context.Reservacion.Where(x => x.IdCliente == idCliente).ToList();
         }
     }
 }

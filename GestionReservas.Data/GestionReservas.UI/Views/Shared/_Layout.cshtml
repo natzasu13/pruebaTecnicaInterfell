@@ -7,6 +7,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
+    @* First try loading jQuery from Google's CDN*@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -55,8 +60,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Listar</a>
                             <a class="dropdown-item" href="@Url.Action("Create", "Reservacion")">Crear</a>
-                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Confirmar</a>
-                            <a class="dropdown-item" href="@Url.Action("Index", "Reservacion")">Pagar</a>
+                            <a class="dropdown-item" href="@Url.Action("Confirmar", "Reservacion")">Confirmar</a>
+                            <a class="dropdown-item" href="@Url.Action("Pagar", "Reservacion")">Pagar</a>
                         </div>
                     </li>
 

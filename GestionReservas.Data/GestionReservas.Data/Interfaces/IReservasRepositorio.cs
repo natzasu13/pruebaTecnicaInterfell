@@ -11,6 +11,11 @@ namespace GestionReservas.Data.Interfaces
         Reservacion GuardarActualizarReservacion(Reservacion reserva);
         void EliminarReservacion(Reservacion reserva);
         IEnumerable<Reservacion> ListarReservacion(Reservacion reserva);
+        IEnumerable<Reservacion> ListarReservacionSinConfirmar();
+        IEnumerable<Reservacion> ListarReservacionSinPagar();
+        Reservacion BuscarReservaXId(int id);
+        IEnumerable<Reservacion> BuscarReservaXIdCliente(int idCliente);
+
 
     }
 }

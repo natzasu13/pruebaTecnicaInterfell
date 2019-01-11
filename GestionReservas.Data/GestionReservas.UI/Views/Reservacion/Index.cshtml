@@ -14,6 +14,8 @@
         <th>Valor</th>
         <th>Cliente</th>
         <th>Sala</th>
+        @*<th>Confirmada</th>
+        <th>Paga</th>*@
     </tr>
     @foreach (var item in @ViewBag.listar)
     {
@@ -24,6 +26,9 @@
             <td>@item.Valor</td>
             <td>@item.Cliente.Nombre</td>
             <td>@item.Sala.Nombre</td>
+            @*<td><input type="checkbox" value=@item.Confirmada/></td>
+            <td><input type="checkbox" value=@item.Paga /></td>*@
+          
         </tr>
     }
 </table>

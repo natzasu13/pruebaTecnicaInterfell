@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Pagar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Paga tu Reserva</h2>
+
+
+<table style="width:100%;" class="table table-dark" id="tPagar">
+    <tr>
+        <th>Id</th>
+        <th>Hora Inicio</th>
+        <th>Hora Finalización</th>
+        <th>Valor</th>
+        <th>Cliente</th>
+        <th>Sala</th>
+        <th>Confirmar</th>
+    </tr>
+    @foreach (var item in @ViewBag.listar)
+    {
+        <tr>
+            <td id="id">@item.Id</td>
+            <td>@item.HoraInicio</td>
+            <td>@item.HoraFin</td>
+            <td id="valor">@item.Valor</td>
+            <td>@item.Cliente.Nombre</td>
+            <td>@item.Sala.Nombre</td>
+            @*      <td align='center'><form><input type=button value="Confirmar" onclick="myFunction()"  style="width:100%"></form></td>*@
+            <td align='center'><form><input type=button value="Pagar" style="width:100%"></form></td>
+
+        </tr>
+    }
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#tPagar').click(function () {
+            var id = $(this).find("td:first-child").html();
+
+            $.ajax({
+                type: "POST",
+                url: "/Reservacion/PagarPost",
+                contentType: "application/json; charset=utf-8",
+                data: '{"idReserva":"' + id + '"}',
+                dataType: "html",
+                success: function (result, status, xhr) {
+                    alert("Se confirmo correctamnte");
+                },
+                error: function (xhr, status, error) {
+                }
+            });
+
+        });
+
+
+    });
+
+</script>
+
+

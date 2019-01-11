@@ -31,6 +31,45 @@ namespace GestionReservas.UI.Controllers
             return View();
         }
 
+        // GET: Reservacion
+        public ActionResult Confirmar()
+        {
+            ViewBag.listar = _reserva.ListarReservacionSinConfirmar();
+            return View();
+        }
+
+        // POST: Default/Create
+        [HttpPost]
+        public ActionResult ConfirmarPost(int idReserva)
+        {
+            Reservacion reserva = _reserva.BuscarReservaXId(idReserva);
+            reserva.Confimada = true;
+            _reserva.GuardarActualizarReservacion(reserva);
+
+            ViewBag.listar = _reserva.ListarReservacionSinConfirmar();
+            return View();
+        }
+
+        // GET: Reservacion
+        public ActionResult Pagar()
+        {
+            ViewBag.listar = _reserva.ListarReservacionSinPagar();
+            return View();
+        }
+
+        // POST: Default/Create
+        [HttpPost]
+        public ActionResult PagarPost(int idReserva)
+        {
+            Reservacion reserva = _reserva.BuscarReservaXId(idReserva);
+            reserva.Paga = true;
+            _reserva.GuardarActualizarReservacion(reserva);
+
+            ViewBag.listar = _reserva.ListarReservacionSinPagar();
+            return View();
+        }
+
+
         // GET: Default/Details/5
         public ActionResult Details(int id)
         {
