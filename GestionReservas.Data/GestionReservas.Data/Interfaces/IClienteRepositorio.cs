@@ -9,7 +9,7 @@ namespace GestionReservas.Data.Interfaces
     public interface IClienteRepositorio
     {
         Cliente GuardarActualizarCliente(Cliente clientes);
-        void EliminarCliente(Cliente clientes);
+        void EliminarCliente(int idCliente);
         IEnumerable<Cliente> ListarCliente(Cliente clientes);
 
     }

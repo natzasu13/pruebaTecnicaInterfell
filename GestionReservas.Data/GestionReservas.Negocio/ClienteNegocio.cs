@@ -23,9 +23,9 @@ namespace GestionReservas.Negocio
             }
         }
 
-        public void EliminarCliente(Cliente clientes)
+        public void EliminarCliente(int idCliente)
         {
-            Repositorio.EliminarCliente(clientes);
+            Repositorio.EliminarCliente(idCliente);
         }
 
         public Cliente GuardarActualizarCliente(Cliente clientes)

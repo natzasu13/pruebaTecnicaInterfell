@@ -33,9 +33,9 @@ namespace GestionReservas.Negocio
             return Repositorio.BuscarReservaXIdCliente(idCliente);
         }
 
-        public void EliminarReservacion(Reservacion reserva)
+        public void EliminarReservacion(int idReserva)
         {
-            Repositorio.EliminarReservacion(reserva);
+            Repositorio.EliminarReservacion(idReserva);
         }
 
         public Reservacion GuardarActualizarReservacion(Reservacion reserva)

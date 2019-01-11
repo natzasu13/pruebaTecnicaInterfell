@@ -9,7 +9,7 @@ namespace GestionReservas.Data.Interfaces
     public interface IReservasRepositorio
     {
         Reservacion GuardarActualizarReservacion(Reservacion reserva);
-        void EliminarReservacion(Reservacion reserva);
+        void EliminarReservacion(int idReserva);
         IEnumerable<Reservacion> ListarReservacion(Reservacion reserva);
         IEnumerable<Reservacion> ListarReservacionSinConfirmar();
         IEnumerable<Reservacion> ListarReservacionSinPagar();

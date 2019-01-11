@@ -19,9 +19,19 @@ namespace GestionReservas.Data.Repositorios
         }
 
 
-        public void EliminarReservacion(Reservacion reserva)
+        public void EliminarReservacion(int idReserva)
         {
-            throw new NotImplementedException();
+            Reservacion reserva = Context.Reservacion.Where(x => x.Id == idReserva).FirstOrDefault();
+
+            if (reserva != null)
+            {
+                //Validar que no haya sido padada o confirmada
+                if (reserva.Confimada != true || reserva.Paga != true)
+                {
+                    Context.Reservacion.Remove(reserva);
+                    Context.SaveChanges();
+                }
+            }
         }
 
         public Reservacion GuardarActualizarReservacion(Reservacion reserva)
