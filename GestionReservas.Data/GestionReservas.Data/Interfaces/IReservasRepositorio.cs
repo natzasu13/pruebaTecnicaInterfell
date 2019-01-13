@@ -17,5 +17,6 @@ namespace GestionReservas.Data.Interfaces
         IEnumerable<Reservacion> BuscarReservaXIdCliente(int idCliente);
 
 
+
     }
 }

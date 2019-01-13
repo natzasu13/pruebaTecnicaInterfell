@@ -234,7 +234,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservacionController.cs" />
+    <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -317,6 +320,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionReservas.Data\GestionReservas.Data.csproj">
+      <Project>{EA01764B-736B-48AB-A3BE-B27D8C79C724}</Project>
+      <Name>GestionReservas.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionReservas.Negocio\GestionReservas.Negocio.csproj">
+      <Project>{adde4510-560f-407f-949a-cd20f9105ebe}</Project>
+      <Name>GestionReservas.Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

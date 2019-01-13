@@ -23,9 +23,14 @@ namespace GestionReservas.Negocio
             }
         }
 
-        public void EliminarSala(Sala sala)
+        public Sala BuscarSala(int id)
         {
-            Repositorio.EliminarSala(sala);
+            return Repositorio.BuscarSala(id);
+        }
+
+        public void EliminarSala(int id)
+        {
+            Repositorio.EliminarSala(id);
         }
 
         public Sala GuardarActualizarSala(Sala sala)

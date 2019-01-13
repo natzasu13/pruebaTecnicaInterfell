@@ -23,6 +23,11 @@ namespace GestionReservas.Negocio
             }
         }
 
+        public Cliente BuscarCliente(int id)
+        {
+            return Repositorio.BuscarCliente(id);
+        }
+
         public void EliminarCliente(int idCliente)
         {
             Repositorio.EliminarCliente(idCliente);

@@ -18,9 +18,16 @@ namespace GestionReservas.Data.Repositorios
             RequiresContextDisposal = true;
         }
 
-        public void EliminarSala(Sala sala)
+        public void EliminarSala(int id)
         {
-            throw new NotImplementedException();
+            Sala sala = Context.Sala.Where(x => x.Id == id).FirstOrDefault();
+
+            if (sala != null)
+            {
+
+                Context.Sala.Remove(sala);
+                Context.SaveChanges();
+            }
         }
 
         public Sala GuardarActualizarSala(Sala sala)

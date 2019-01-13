@@ -11,6 +11,7 @@ namespace GestionReservas.Data.Interfaces
         Cliente GuardarActualizarCliente(Cliente clientes);
         void EliminarCliente(int idCliente);
         IEnumerable<Cliente> ListarCliente(Cliente clientes);
+        Cliente BuscarCliente(int id);
 
     }
 }
